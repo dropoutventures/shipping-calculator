@@ -9,8 +9,8 @@ class DhlConfiguration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $builder = new TreeBuilder('knp_doctrine_behaviors');
-        $rootNode = $builder->root('dhl');
+        $builder = new TreeBuilder('dhl');
+        $rootNode = $builder->getRootNode();
 
         $rootNode
             ->children()
