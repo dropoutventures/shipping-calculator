@@ -62,18 +62,18 @@ class DhlHandler implements HandlerInterface, ValidationHandlerInterface
                 'dimensions_unit',
                 'maximum_weight',
                 'maximum_dimensions',
-            ])
-            ->setAllowedTypes([
-                'export_countries' => 'array',
-                'import_countries' => 'array',
-                'zone_calculators' => 'array',
-                'currency' => 'string',
-                'math' => MathInterface::class,
-                'weight_converter' => UnitConverterInterface::class,
-                'length_converter' => UnitConverterInterface::class,
-                'volumetric_weight_calculator' => DhlVolumetricWeightCalculator::class,
-                'dimensions_normalizer' => DimensionsNormalizer::class,
             ]);
+        
+        $resolve->setAllowedTypes('export_countries', 'array');
+        $resolve->setAllowedTypes('import_countries', 'array');
+        $resolve->setAllowedTypes('zone_calculators', 'array');
+        $resolve->setAllowedTypes('currency', 'string');
+        $resolve->setAllowedTypes('math', MathInterface::class);
+        $resolve->setAllowedTypes('weight_converted', UnitConverterInterface::class);
+        $resolve->setAllowedTypes('length_converted', UnitConverterInterface::class);
+        $resolve->setAllowedTypes('volumetric_weight_calculator', DhlVolumetricWeightCalculator::class);
+        $resolve->setAllowedTypes('dimensions_normalizer', DimensionsNormalizer::class);
+        
 
         $resolver->setNormalizer('import_countries', $this->createImportCountriesNormalizer());
         $resolver->setNormalizer('export_countries', $this->createExportCountriesNormalizer());
