@@ -64,15 +64,15 @@ class DhlHandler implements HandlerInterface, ValidationHandlerInterface
                 'maximum_dimensions',
             ]);
         
-        $resolve->setAllowedTypes('export_countries', 'array');
-        $resolve->setAllowedTypes('import_countries', 'array');
-        $resolve->setAllowedTypes('zone_calculators', 'array');
-        $resolve->setAllowedTypes('currency', 'string');
-        $resolve->setAllowedTypes('math', MathInterface::class);
-        $resolve->setAllowedTypes('weight_converted', UnitConverterInterface::class);
-        $resolve->setAllowedTypes('length_converted', UnitConverterInterface::class);
-        $resolve->setAllowedTypes('volumetric_weight_calculator', DhlVolumetricWeightCalculator::class);
-        $resolve->setAllowedTypes('dimensions_normalizer', DimensionsNormalizer::class);
+        $resolver->setAllowedTypes('export_countries', 'array');
+        $resolver->setAllowedTypes('import_countries', 'array');
+        $resolver->setAllowedTypes('zone_calculators', 'array');
+        $resolver->setAllowedTypes('currency', 'string');
+        $resolver->setAllowedTypes('math', MathInterface::class);
+        $resolver->setAllowedTypes('weight_converted', UnitConverterInterface::class);
+        $resolver->setAllowedTypes('length_converted', UnitConverterInterface::class);
+        $resolver->setAllowedTypes('volumetric_weight_calculator', DhlVolumetricWeightCalculator::class);
+        $resolver->setAllowedTypes('dimensions_normalizer', DimensionsNormalizer::class);
         
 
         $resolver->setNormalizer('import_countries', $this->createImportCountriesNormalizer());
