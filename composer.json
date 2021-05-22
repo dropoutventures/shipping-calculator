@@ -15,9 +15,9 @@
     },
     "require": {
         "php": ">=5.5",
-        "symfony/event-dispatcher": "~2.7",
-        "symfony/config": "~2.7",
-        "symfony/options-resolver": "~2.7",
+        "symfony/event-dispatcher": "^2.7",
+        "symfony/config": "^2.7",
+        "symfony/options-resolver": "^2.7",
         "moriony/trivial": "~0.2"
     },
     "require-dev": {
